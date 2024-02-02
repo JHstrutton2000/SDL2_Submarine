@@ -3,26 +3,22 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include "defines.h"
-
-#include <string>
-#include <vector>
-#include <SDL_surface.h>
-
 
 
 class GameObject {
 public:
-	GameObject(SDL_Surface* screenSurface);
+	GameObject(SDL_Surface* screenSurface, SDL_Renderer* screenRenderer, uint32_t color);
 	~GameObject();
-	void applyForce(int x, int y);
-	void update();
-	virtual void draw();
 protected:
 	std::string name;
 	void* drawing;
 	vector2D *pos, *vel, *acc;
-private:
+	uint32_t objectColor;
+	SDL_Surface* Surface;
+	SDL_Renderer* renderer;
+	virtual void applyForce(int x, int y);
+	virtual void update();
+	virtual void draw();
 
 };
 

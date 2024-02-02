@@ -31,6 +31,17 @@ struct vector2D{
 	}
 };
 
+#include <string>
+#include <vector>
+#include <stdio.h>
+
+#include <SDL.h>
+#include <SDL_surface.h>
+#include <SDL_render.h>
+
+#include "GameObject.h"
+#include "Submarine.h"
+
 
 
 #endif //DEFINES_H

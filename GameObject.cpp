@@ -1,9 +1,11 @@
-#include "GameObject.h"
+#include "defines.h"
 
-GameObject::GameObject(SDL_Surface* screenSurface) {
+GameObject::GameObject(SDL_Surface* screenSurface, SDL_Renderer* screenRenderer, uint32_t color) {
 	pos = (vector2D*)malloc(2 * sizeof(vector2D));
 	acc = (vector2D*)malloc(2 * sizeof(vector2D));
 	vel = (vector2D*)malloc(2 * sizeof(vector2D));
+	drawing = malloc(0);
+	objectColor = color;
 }
 
 GameObject::~GameObject() {
@@ -22,9 +24,7 @@ void GameObject::update() {
 	*vel += *acc;
 	acc->set(0, 0);
 
-	*vel *= 0.85;
-
-	draw();
+	//*vel *= 0.85;
 }
 
 void GameObject::draw() {
