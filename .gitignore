@@ -1,0 +1,9 @@
+*.exe
+*.o
+*.a
+.vs
+.git
+x86
+x64
+Debug
+Release
